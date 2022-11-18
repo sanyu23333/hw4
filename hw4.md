@@ -61,9 +61,9 @@ microbenchmark::microbenchmark(
     ## overflows
 
     ## Unit: milliseconds
-    ##          expr      min        lq       mean    median        uq      max neval
-    ##     fun1(dat) 0.161704 0.1715235 0.17843364 0.1749675 0.1829215 0.252273   100
-    ##  fun1alt(dat) 0.004961 0.0054530 0.01259602 0.0058425 0.0065805 0.642224   100
+    ##          expr      min        lq       mean    median       uq      max neval
+    ##     fun1(dat) 0.161417 0.1702525 0.17741602 0.1740040 0.180933 0.245795   100
+    ##  fun1alt(dat) 0.005043 0.0054530 0.01168623 0.0057195 0.006314 0.566210   100
 
 ``` r
 # Test for the second
@@ -74,9 +74,9 @@ microbenchmark::microbenchmark(
 ```
 
     ## Unit: milliseconds
-    ##          expr      min       lq      mean    median       uq      max neval
-    ##     fun2(dat) 1.177643 1.185351 1.2075734 1.1956830 1.214461 1.343488   100
-    ##  fun2alt(dat) 0.279989 0.330296 0.4787918 0.3452815 0.369000 6.725517   100
+    ##          expr      min       lq      mean   median        uq      max neval
+    ##     fun2(dat) 1.170673 1.187053 1.2048945 1.197795 1.2174745 1.280348   100
+    ##  fun2alt(dat) 0.270641 0.334355 0.4590758 0.342391 0.3543015 5.727208   100
 
 ``` r
 # The last argument, check = “equivalent”, is included to make sure that the functions return the same result.
@@ -114,7 +114,7 @@ system.time({
     ## [1] 3.14124
 
     ##    user  system elapsed 
-    ##   0.691   0.189   0.890
+    ##   0.689   0.198   0.906
 
 Rewrite the previous code using parLapply() to make it run faster. Make
 sure you set the seed using clusterSetRNGStream():
@@ -135,7 +135,7 @@ system.time({
     ## [1] 3.141578
 
     ##    user  system elapsed 
-    ##   0.004   0.002   0.503
+    ##   0.006   0.004   0.501
 
 # SQL
 
